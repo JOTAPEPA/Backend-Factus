@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const customerSchema = new mongooseSchema ({
-    indetificacion: {type: Number, requiered: true, unique: true},
+    indetification: {type: Number, requiered: true, unique: true},
     dv: {type: String, requiered: true},
     company: {type: String, requiered: true,},
     tradeName: { type: String, requiered: true},

@@ -1,6 +1,7 @@
-import moongose from 'mongoose';
+import mongoose from 'mongoose';
 
-const facturaSchema = new mongooseSchema ({
+const facturaSchema = new mongoose.Schema (
+    {
     numbering_range_id: {type: Number, required: true},
     reference_code: {type: String, required :true, unique: true},
     observation: { type: String, required: true},
@@ -15,4 +16,4 @@ const facturaSchema = new mongooseSchema ({
     },  
 })
 
-export default moongose.model('factura', facturaSchema)
+export default mongoose.model('factura', facturaSchema)
