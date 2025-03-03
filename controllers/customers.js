@@ -1,25 +1,30 @@
-import { get } from "mongoose";
-import customer from "../models/customers";
+
+import customer from "../models/customers.js";
 
 const httpCustomer = {
 
     postInsertar: async (req, res) => {
-        try{
+        try {
             const { identification, dv, company, tradeName, names, addres, email, phone, legalOrganizationId, tributeId, identificationDocumentId, municipalityId } = req.body;
-            const newCustomer = new customer({identification, dv, company, tradeName, names, addres, email, phone, legalOrganizationId, tributeId, identificationDocumentId, municipalityId});
+            const newCustomer = new customer({
+                identification, dv, company, tradeName, names, addres, email, phone, legalOrganizationId, tributeId, identificationDocumentId, municipalityId
+            });
             await newCustomer.save();
-        } catch(error){
-            res.status(500).json({ message: 'Error al guardar el cliente' });   
-            
+            res.json({newCustomer})
+        } catch (error) {
+            res.status(400).json({ message: 'Error al guardar el clienteoñ' });
+            console.log(error);
         }
     },
 
     getListarTodos: async (req, res) => {
-        try{
+        try {
             const listarTodos = await customer.find();
             res.json(listarTodos);
-        } catch(error){
+        } catch (error) {
             res.status(500).json({ message: 'Error al obtener los clientes' });
         }
     }
 }
+
+export default httpCustomer;

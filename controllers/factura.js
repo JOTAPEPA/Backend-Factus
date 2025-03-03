@@ -2,6 +2,7 @@
 import factura from '../models/factura.js';
 
 const httpFactura = {
+    
     postInsertar: async (req, res) => {
         try{    
             const { numbering_range_id, reference_code, observation, paymentForm, paymentDueDate, paymentMethodCode, billingPeriod } = req.body;
