@@ -8,9 +8,9 @@ const httpFactura = {
             const { numbering_range_id, reference_code, observation, paymentForm, paymentDueDate, paymentMethodCode, billingPeriod } = req.body;
             const newFactura = new factura({ numbering_range_id, reference_code, observation, paymentForm, paymentDueDate, paymentMethodCode, billingPeriod });
             await newFactura.save();
-            res.json({ message: 'Factura guardada correctamente' });
+            res.json({ newFactura });
         } catch( error){
-            res.status(500).json({ message: 'Error al guardar la factura' });
+            res.status(400).json({ message: 'Error al guardar la factura' });
         }
     },
 

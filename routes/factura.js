@@ -8,4 +8,4 @@ router.post('/', [
 router.get('/',[
 ], httpFactura.getListarTodos);
 
-export default router;
+export default router;  

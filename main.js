@@ -7,6 +7,7 @@ dotenv.config();
 
 import httpFactura from './routes/factura.js';
 import httpCustomer from './routes/customers.js';
+import httpItems from './routes/items.js';
 
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(cors())
 app.use(express.json());
 app.use("/api/factura", httpFactura);
 app.use("/api/customers", httpCustomer);
+app.use("/api/items", httpItems);
 app.use(express.static('public'));
 
 app.listen(process.env.PORT,()=>{
