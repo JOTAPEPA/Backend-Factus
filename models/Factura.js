@@ -16,3 +16,4 @@ const facturaSchema = new mongooseSchema ({
 })
 
 export default moongose.model('factura', facturaSchema)
+
