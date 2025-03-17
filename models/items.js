@@ -14,12 +14,12 @@ const itemsSchema = new mongoose.Schema(
         tribute_id: { type: Number, required: true, unique: true },
         withholding_taxes: [
             {
-                code: { type: String, required: true, unique: true },
-                withholding_taxes_rate: { type: String, required: true },
+                code: { type: String, unique: true },
+                withholding_taxes_rate: { type: String,},
             },
             {
-                code: { type: String, required: true, unique: true },
-                withholding_taxes_rate: { type: String, required: true },
+                code: { type: String, unique: true },
+                withholding_taxes_rate: { type: String, },
             }
         ]
     },

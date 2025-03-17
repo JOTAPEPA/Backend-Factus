@@ -4,6 +4,8 @@ const facturaSchema = new mongoose.Schema(
     {
         numbering_range_id: { type: Number, required: true },
         reference_code: { type: String, required: true, unique: true },
+        items: {type: mongoose.Schema.Types.ObjectId, ref: 'item', required: true},
+        customers:{type: mongoose.Schema.Types.ObjectId, ref: 'customers', required: true},
         observation: { type: String, required: true },
         paymentForm: { type: String, required: true },
         paymentDueDate: { type: Date, required: true },
