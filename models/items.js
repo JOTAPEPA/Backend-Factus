@@ -8,20 +8,20 @@ const itemsSchema = new mongoose.Schema(
         discount_rate: { type: Number },
         price: { type: Number, required: true },
         tax_rate: { type: String, required: true },
-        unit_measure_id: { type: Number, required: true, unique: true },
+        unit_measure_id: { type: String, required: true, unique: true },
         standard_code_id: { type: Number, required: true, unique: true },
         is_excluded: { type: Boolean, required: true },
-        tribute_id: { type: Number, required: true, unique: true },
-        withholding_taxes: [
-            {
-                code: { type: String, unique: true },
-                withholding_taxes_rate: { type: String,},
-            },
-            {
-                code: { type: String, unique: true },
-                withholding_taxes_rate: { type: String, },
-            }
-        ]
+        tribute_id: { type: String, required: true, unique: true },
+       // withholding_taxes: [
+           // {
+              //  code: { type: String, unique: true },
+               // withholding_taxes_rate: { type: String,},
+            //},
+           // {
+               // code: { type: String, unique: true },
+                //withholding_taxes_rate: { type: String, },
+           // }
+        //]
     },
 );
 
