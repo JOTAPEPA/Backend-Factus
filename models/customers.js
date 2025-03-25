@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const customerSchema = new mongoose.Schema (
     {
+    typeOfPerson: {type: String, required: true},   
+    typeOfIdentification: {type: String, required: true},
     identification: {type: Number, required: true, },
     dv: {type: String, required: true},
     company: {type: String, required: true,},
