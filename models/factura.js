@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const facturaSchema = new mongoose.Schema(
     {
-        numbering_range_id: { type: Number },   
+        numberingRangeId: { type: Number },   
         referenceCode: { type: String, required: true, unique: true },
         observation: { type: String},
         paymentForm: { type: String },
