@@ -2,23 +2,29 @@ import mongoose from 'mongoose';
 
 const facturaSchema = new mongoose.Schema(
     {
-        numbering_range_id: { type: Number, required: true },
-        item: {type:mongoose.Schema.Types.ObjectId, ref:'item', required: true},
-        customer: {type:mongoose.Schema.Types.ObjectId, ref:'customers', required: true},    
-        reference_code: { type: String, required: true, unique: true },
-        items: {type: mongoose.Schema.Types.ObjectId, ref: 'item', required: true},
-        customers:{type: mongoose.Schema.Types.ObjectId, ref: 'customers', required: true},
-        observation: { type: String, required: true },
-        paymentForm: { type: String, required: true },
-        paymentDueDate: { type: Date, required: true },
-        paymentMethodCode: { type: String, required: true, unique: true },
+        numbering_range_id: { type: Number },   
+        referenceCode: { type: String, required: true, unique: true },
+        observation: { type: String},
+        paymentForm: { type: String },
+        paymentDueDate: { type: Date},
+        paymentMethodCode: { type: String},
         billingPeriod: {
-            startDate: { type: Date, required: true },
-            startTime: { type: String, required: true },
-            endDate: { type: Date, required: true },
-            endTime: { type: String, required: true }
-        }
-    }
+            startDate: { type: Date},
+            startTime: { type: String},
+            endDate: { type: Date},
+            endTime: { type: String}
+        },
+        customer: {type: mongoose.Schema.Types.ObjectId, ref: 'customers', required: true},
+        items: {type:Array, required: true},
+        cufe: { type: String, unique: true },
+        invoiceUrl: { type: String },
+        qr: { type: String },
+        publicUrl: { type: String },
+        qrImage: { type: String },
+        number: { type: String },
+        company: { type: String },
+    },
+    {timestamps: true}  
 );
 
 export default mongoose.model('factura', facturaSchema);
